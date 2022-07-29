@@ -7,7 +7,7 @@ const CryptoContext = ({ children }) => {
   const [symbol, setSymbol] = useState("đ");
 
   useEffect(() => {
-    if (currency === "INR") setSymbol("₹");
+    if (currency === "EUR") setSymbol("€");
     else if (currency === "USD") setSymbol("$");
     else if (currency === "VND") setSymbol("đ")
   }, [currency]);

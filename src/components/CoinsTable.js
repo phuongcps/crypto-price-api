@@ -96,7 +96,7 @@ export default function CoinsTable() {
           label="Search For a Crypto Currency.."
           variant="outlined"
           style={{ marginBottom: 20, width: "100%" }}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => {setPage(1);setSearch(e.target.value)}}
         />
         <TableContainer component={Paper}>
           {loading ? (
@@ -193,7 +193,7 @@ export default function CoinsTable() {
 
         {/* Comes from @material-ui/lab */}
         <Pagination
-          count={(handleSearch()?.length / 10).toFixed(0)}
+          count={Math.ceil(handleSearch()?.length / 10)}
           style={{
             padding: 20,
             width: "100%",
